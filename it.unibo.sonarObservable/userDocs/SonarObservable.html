@@ -232,11 +232,11 @@ div.imagedesc{
 </div>
 <h2>Requirement analysis</h2>
 <div class="remark">
-    L'interazione con il committente ha chiarito il significato dei seguenti aspetti:
+    L'interazione con il committente ha chiarito il significato dei seguenti termini:
     <br> <br>
     <ul>
         <li>
-            <ks>modifica significativa</ks>: il valore rilevato dal Sonar è maggiore o minore del valore 
+            <ks>modificano in modo significativo</ks>: il valore rilevato dal Sonar è maggiore o minore del valore 
             precedente più o meno una quantità "<ks>X</ks>" costantente, cioè il valore rilevato si trova 
             al di fuori dell'intorno "X" del valore precedente.
         </li>
@@ -274,36 +274,61 @@ differenti approcci:
     l'approccio del <ks>Metodo 2</ks>.
 </div>
 
-Al fine di formalizzare tale approccio è necessario definire un contratto tra gli attori in gioco, ciò
-si traduce nella definizione delle due interfacce seguenti. <br> <br>
+Il problema non consiste quindi nel rendere osservabile il Sonar, bensì bisogna rendere
+osservabile la distanza misurata dal Sonar. Poichè l'interfaccia <kc>IDistance</kc>,
+introdotta in precedenza per rappresentare il concetto di distanza, non espone metodi per 
+modificare il valore della distanza essa definisce il concetto di distanza come un qualcosa
+di immutabile. Pertanto, è necessario introdurre il concetto di <ks>Distanza Misurata</ks>,
+che rappresenta un'entità che cambia nel tempo. 
+In questo modo sarà possibile rendere la distanza osservabile. <br>
+Inoltre sarà necessario dotare il Sonar della capacità di inviare in maniera <ks>autonoma</ks>, 
+e non soltanto su richiesta, e quando lo ritiene opportuno il valore di distanza misurato. Bisogna quindi estendere le
+capacità del Sonar. <br> <br>
+Al fine di formalizzare quanto detto fin'ora è necessario definire un contratto 
+tra le parti in gioco, ciò si traduce nella definizione delle seguenti interfacce. <br> <br>
 
 <table>
     <tbody>
         <tr>
             <td>
-                <center><img style="width: 65%;" src="./img/ISonarObservable.png" alt=""></center>
+                <center><img style="width: 45%;" src="./img/IMesuredDistance.png" alt=""></center>
             </td>
+            <td width="40%">
+                L'interfaccia <kc>IMesuredDistance</kc> definisce i metodi per aggiungere o rimuovere gli Observer, e la
+                proprità <kc>setVal</kc> con la quale è possibile <ks>modificare</ks> valore di distanza,
+                 <kc>IDistance</kc>, misurato.
+            </td>
+           
+        </tr>
+        <tr>
             <td>
-                <center><img style="width: 65%;" src="./img/IObserver.png" alt=""></center>
+                <center><img style="width: 45%;" src="./img/IObserver.png" alt=""></center>
+            </td>
+            <td width="40%" >
+                L'interfaccia <kc>IObserver</kc> definisce un unico metodo che sarà utilizzato per notificare
+                gli osservatori di una modifica della distanza misurata.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <center><img style="width: 45%;" src="./img/IObservable.png" alt=""></center>
+            </td>
+            <td width="40%">
+                L'interfaccia <kc>IObservable</kc> permette di estendere le capacità del 
+                Sonar, ed eventualmente di altri componenti, rendendolo capace di aggiornare
+                la distanza misurata quando questa subisce una variazione significativa.
             </td>
         </tr>
     </tbody>
 </table>
 <br>
-L'interfaccia <ks>ISonarObservable</ks> definisce i metodi per aggiungere o rimuovere degli Observer, e il 
-metodo <kc>notify</kc> con il quale notifica agli osservatori il nuovo valore di distanza,
- <kc>IDistance</kc>, misurato.
+
 <br>
-L'interfaccia <ks>IObserver</ks> definisce un unico metodo che il <ks>SonoarObservable</ks> invoca per comunicare il 
-nuovo valore di <kc>IDistance </kc> agli Observer.
-
-<h3>Architettura logica</h3>
-<div class="remark">
-    Un primo modello di architettura logica potrebbe essere quello raffigurato di seguito: <br> <br>
-    <img style="width: 40%;" src="./img/AL.png" alt="">
-</div>
 
 
+<!--
+<h3>Architettura logica</h3> 
+-->
 <h2>Test plans</h2> 
 
 
