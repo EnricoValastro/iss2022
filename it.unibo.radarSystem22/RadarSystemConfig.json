@@ -1,0 +1,9 @@
+{ 
+"RadarGuiRemote"	:	"false",
+"testing"			:	"false",
+"tracing"			:	"false",
+"DLIMIT"			:	"70",
+"serverPort"		:	"8080",
+"hostAddr"			:	"172.20.10.4",
+"raspAddr"			:	"192.168.2.2"
+}

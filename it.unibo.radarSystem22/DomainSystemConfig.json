@@ -1,0 +1,8 @@
+{ 
+"simulation"	:	"true",
+"ledGui"		:	"true",
+"sonarDelay"	:	"200",
+"DLIMIT"		:	"70",
+"sonarMaxDist"	:	"150",
+"testing"		:	"false"
+}

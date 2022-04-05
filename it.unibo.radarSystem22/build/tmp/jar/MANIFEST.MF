@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: it.unibo.radarSystem22.sprint2a.main.RadarSystemSprint2aDevi
+ cesOnRaspMain
+
