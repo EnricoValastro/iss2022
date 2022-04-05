@@ -39,6 +39,7 @@ public class Controller {
 		
 		new Thread() {
 			
+			
 			public void run() {
 				
 				if(sonar.isActive()) {
