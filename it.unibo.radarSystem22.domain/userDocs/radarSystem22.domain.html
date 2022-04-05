@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+-->
+
+<style type="text/css">
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+</style>
+    
+<head>
+    <meta charset="utf-8"/>
+<title>radarSystem22domain</title></head>
+    
+<body>
+<div id="top">
+<h1>LABORATORIO DI INGEGNERIA DEI SISTEMI SOFTWARE <font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+ 
+ 
+<h2>Requirements</h2>
+
+ 
+<div class="remark">
+    Si desidera costruire un'applicazione software capace di:
+    <ul>
+        <li>(requisito radarGui) mostrare le distanze rilevate da un sensore Sonar``HC-SR04`` 
+            connesso a un RaspberryPi su un display (RadarDisplay) a forma di radar connesso a un PC.
+            <img src="./img/radarDisplay.png" alt="">
+        </li>
+        <li>(requisito ledAlarm) accendere un Led se la distanza rilevata dal Sonar è inferiore a un 
+            valore limite prefissato denominato DLIMIT.
+        </li>
+    </ul>
+</div>
+
+ 
+
+<h2>Requirement analysis</h2>
+ 
+
+</div>
+
+<h2>Problem analysis</h2>
+<h3>Problematiche rilevate</h3>
+Le principali problematiche rilevate sono:
+<br>
+<br>
+<ol>
+    <li>
+        Gestione del sensore HC-SR04: il committente fornisce il software 
+        "<a href="./c/SonarAlone.c">SonarAlone.c</a>" che genera dati sul dispositivo standard di output.
+    </li>
+    <li>
+        Realizzazione del RadarDisplay: A tal fine il committente 
+        rende disponibile il POJO realizzato da radarPojo.jar.
+    </li>
+    <li>
+        Gestione del Led: il committente fornisce i software <a href="./bash/led25GpioTurnOn.sh">led25GpioTurnOn.sh</a> e 
+        <a href="./bash/led25GpioTurnOff.sh">led25GpioTurnOff.sh</a> che tramite codice di basso livello permettono di accendere e
+        spegnere il led.
+    </li>
+</ol>
+
+<h3>Aspetti Rilevanti</h3>
+<br>
+Sulla base del <ks>principio di singola responsabilità</ks> sarebbe opportuno introdurre un nuovo componente
+che abbia la responsabilità di realizzare la logica applicativa, denomineremo tale componente <kc>Controller</kc>. <br>
+Il <kc>Controller</kc> deve ricevere in ingresso i dati del sensore HC-SR04, 
+elaborarli e inviare comandi al Led e dati al RadarDisplay. <br><br>
+<div class="remark">
+    Si tratta, quindi, di realizzare un sistema distribuito formato da quattro componenti: tre dispositivi I/O 
+    (Led,Sonar,Radar) e un Controller che li gestisce.
+</div>
+<br>
+La necessità di integrare i componenti disponibili induce a pensare che sia opportuno incapsulare
+i componenti disponibli entro altri componenti capaci di interagire via rete.
+Il <ks>modello del dominio</ks> del sistema è rappresentato dalle seguenti interfacce che definiscono
+i modelli iniziali dei componenti: <br>
+
+<h4>Interfacce ILed e IRadarDisplay</h4>
+
+<table>
+    <tr>
+        <th>Led</th>
+        <th>RadarDisplay</th>
+    </tr>
+    <tr>
+        <td>
+<pre>
+public interface ILed {
+    public void turnOn();
+    public void turnOff();
+    public boolean getState();
+}
+</pre>
+        </td>
+        <td>
+<pre>
+public interface IRadarDisplay{
+    public void update(String d, String a);
+}
+</pre>
+        </td>
+    </tr>
+</table>
+
+<h4>Interfacce IDistance e ISonar</h4>
+<table>
+    <tr>
+        <th>Distance</th>
+        <th>Sonar</th>
+    </tr>
+    <tr>
+        <td>
+<pre>
+public interface IDistance {
+    public int getVal(   );
+    public String toString(   );
+}
+</pre>
+        </td>
+        <td>
+<pre>
+public interface ISonar {
+    public void activate();
+    public void deactivate();
+    public IDistance getDistance();
+    public boolean isActive();
+}
+</pre>
+        </td>
+    </tr>
+</table>
+<br><br>
+
+<kc>ISonar</kc> offre metodi per attivare/disattivare il dispositivo e il metodo getDistance per fornire il 
+valore corrente di distanza misurata. <br><br>
+L'interfaccia <kc>IDistance</kc> è introdotta per reppresentare il concetto di distanza,
+in modo da non appiattire questo concetto su un tipo predefinito, come int. 
+Non vi sono metodi per modificare una distanza, ma solo metodi per fornirne una rappresentazione 
+in termini di tipi primitivi, tra cui mettiamo in evidenza il metodo che fornisce una rappresentazione 
+in termini di String.
+
+<h3>Architettura logica</h3>
+L'analisi condotta finora permette di definire un primo prototipo di architettura logica rappresentata
+dalla figura seguente:
+<br><br>
+
+<img src="./img/arcLogic.png" alt="" width="45%">
+<br>
+<br>
+Come avvenga l’interazione tra le parti relative alla acquisizione dei dati e all’invio dei comandi 
+non è specificato al momento. E' possibile, però, evidenziare che il Controller può acquisire i dati del
+Sonar in modi diversi:
+<ul>
+    <li>
+        Inviando una richiesa al Sonar, che gli fornisce un dato come risposta;
+    </li>
+    <li>
+        Agendo come un componente observer di un Sonar observable;
+    </li>
+    <li>
+        Agendo com un subscriber su una topic di un broker su cui il Sonar pubblica i suoi dati.
+    </li>
+</ul>
+In ogni caso l'interazione può essere realizzata attraverso i numerosi 
+protocolli (TCP, UDP, MQTT, HTTP) preesistenti.
+
+<h4>Abstraction-gap</h4>
+<div class="remark">
+    La necessità di inviare e ricevere messaggi via rete segnala un gap tra il livello tecnologico 
+    dei componenti software resi disponibili dal committente e le necessità del problema. <br>
+    Il gap relativo alle comunicazioni di rete può essere superato avvalendosi di librerie
+    che permettono l’uso di protocolli quali TCP, UDP, HTTP, etc.
+
+
+</div>
+<h2>Test plans</h2> 
+
+
+<h2>Project</h2> 
+I modelli iniziali dei componenti sono descritti dalle interfacce Java
+ILed, ISonar e IRadarDisplay che costuiscono il nostro attuale modello del dominio. <br>
+Per agevolare la messa a punto dell'applicazione, conviene introdurre i <ks>Mock-objects</ks>, 
+cioè dispositivi simulati che riproducono il comportamento dei dispositivi reali in modo controllato.
+<h3>Architettura a strati</h3>
+
+
+<table>
+    <tbody>
+        <tr>
+            <td style="width: 50%">
+                Per essere certi che un dispositivo Mock possa essere un sostituto efficace di un dispositivo reale, 
+                introduciamo per ogni dispositivo una classe astratta comune alle due tipologie (Mock e Concrete), 
+                che funga anche da Factory specifica per quel tipo di dispositivo. <br>
+                Partendo dunque dalle interfacce introdotte in fase di analisi è possibile definire i <ks>modelli</ks>
+                dei componenti.
+            </td>
+            <td>
+                
+                <center><img src="img/compArc.png" alt="" width="55%"></center>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<table>
+    <tbody>
+        <tr>
+            <td style="width: 50%">
+                Per facilitare la costruzione di dispositivi senza dover denotare in modo esplicito 
+                le classi di implementazione, conviene introdurre una <ks>Factory</ks>. <br>
+                Ciascun metodo di ComponentFactory restitusce una istanza di un dispositivo reale (Concrete) 
+                o Mock in accordo alle specifiche contenute in un file di Configurazione (DomainSystemConfig.json). <br>
+                La ComponentFactory sfrutta le factory specifiche definite dai modelli dei componenti per creare 
+                un componente concreto o Mock. 
+            </td>
+            <td>
+                
+                <center><img src="img/compFact.png" alt="" width="90%"></center>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+</div>
+
+<h2>Testing</h2> 
+ 
+
+<h2>Deployment</h2> 
+
+ 
+<h2>Maintenance</h2> 
+ 
+<!-- USEFUL
+<table style="width:100%" border="1">
+<tr>
+<td style="width:50%">
+</td>
+<td></td>
+</tr>
+</table>
+-->
+	      	
+<br/><br/> 	
+</div>  
+
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:left;color:white">
+By Enrico Valastro email: enrico.valastro@studio.unibo.it  
+<img src="./img/foto.jpeg" alt="mbot" width="15%" height="15%">
+</div> 
+</body>
+</html>

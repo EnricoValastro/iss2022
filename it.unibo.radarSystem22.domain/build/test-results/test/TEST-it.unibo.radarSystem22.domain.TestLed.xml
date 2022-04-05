@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="it.unibo.radarSystem22.domain.TestLed" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-22T11:46:25" hostname="Enricos-Air.homenet.telecomitalia.it" time="4.619">
+  <properties/>
+  <testcase name="testLedMock" classname="it.unibo.radarSystem22.domain.TestLed" time="4.619"/>
+  <system-out><![CDATA[TestLedMock | Up
+LedModel	|	LedMock : created
+LedMockWithGui	|	created
+LedMock	|	TurnOn Led
+LedMock	|	TurnOff Led
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
