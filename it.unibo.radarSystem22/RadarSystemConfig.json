@@ -3,7 +3,10 @@
 "testing"			:	"false",
 "tracing"			:	"false",
 "DLIMIT"			:	"70",
+"protocolType"      :   "tcp",
 "serverPort"		:	"8080",
+"ledPort"           :   "8010",
+"sonarPort"         :   "8015",
 "hostAddr"			:	"172.20.10.4",
 "raspAddr"			:	"192.168.2.2"
 }

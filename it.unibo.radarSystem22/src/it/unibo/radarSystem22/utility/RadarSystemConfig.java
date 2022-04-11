@@ -4,22 +4,25 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
+import it.unibo.comm2022.utility.ProtocolType;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 public class RadarSystemConfig {
 	
-	public static boolean  RadarGuiRemote = false;
-	public static boolean tracing         = false;	
-	public static boolean testing         = false;
-	public static int DLIMIT              = 15;  
+	public static boolean  RadarGuiRemote 	= false;
+	public static boolean tracing         	= false;
+	public static boolean testing         	= false;
+	public static int DLIMIT              	= 15;
 	
-	public static int serverPort		  = 8080;
-	public static int ledPort			  = 8010;
-	public static int sonarPort			  = 8015;
-	public static String hostAddr		  = "localhost";
-	public static String raspAddr		  =	"localhost";
+	public static int serverPort		 	= 8080;
+	public static int ledPort			  	= 8010;
+	public static int sonarPort			  	= 8015;
+	public static String hostAddr		  	= "localhost";
+	public static String raspAddr		  	= "localhost";
+	public static ProtocolType protocolType = ProtocolType.tcp;
+
 	
 	
 	public static void setTheConfiguration( String resourceName ) throws JSONException {
