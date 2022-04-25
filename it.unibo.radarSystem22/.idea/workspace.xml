@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09f6eec1-436b-45fd-9d4d-a3d32f46fe68" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/ApplMsgHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/interfaces/IApplMsgHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/interfaces/Interaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/proxy/ProxyAsClient$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/proxy/ProxyAsClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/tcp/TcpApplMessageHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/tcp/TcpClientSupport.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/tcp/TcpConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/tcp/TcpServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/utility/CommSystemConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/utility/MessageObj.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/classes/java/main/it/unibo/comm2022/utility/ProtocolType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/distributions/it.unibo.comm2022-1.0.tar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/distributions/it.unibo.comm2022-1.0.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/libs/it.unibo.comm2022-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/scripts/it.unibo.comm2022" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/scripts/it.unibo.comm2022.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/build/tmp/jar/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.comm2022/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../it.unibo.comm2022/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../it.unibo.radarSystem22.domain/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../it.unibo.radarSystem22.domain/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RadarSystemConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/RadarSystemConfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/unibo/radarSystem22/utility/RadarSystemConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/unibo/radarSystem22/utility/RadarSystemConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../unibolibs/it.unibo.comm2022-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../unibolibs/it.unibo.comm2022-1.0.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
