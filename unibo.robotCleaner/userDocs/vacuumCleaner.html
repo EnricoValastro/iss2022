@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <!--
+<link rel="stylesheet" type="text/css" href="../css/issStyle1.css">
+<script type="text/javascript" src="../css/issStyle.js"></script>
+-->
+
+<style type="text/css">
+body
+{
+    margin-left:  30px;
+    margin-right: 30px;
+};
+
+P
+{
+    font-family: Tahoma;
+    font-size: 10pt;
+};
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+	font-size: 93%;
+}
+
+a:hover {
+    background-color: #cccccc;
+}
+
+
+hr {
+    clear: both;
+    height: 1px;
+    color: #242424;
+    background-color: transparent;
+}
+
+h1, h2, h3 {
+    color: #242424;
+    clear: left;
+    font: 100% Tahoma, Helvetica, Arial, sans-serif;
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+top {
+	width: 100%;
+}
+
+
+#i {
+    color: #ff1010;
+}
+tt{
+	font-family: "Arial";
+    font-size: 90%;
+	color: #006600;
+}
+em{
+	font-family: "Arial";
+    font-size: 80%;
+	font-weight: bold;
+	border-style:solid;
+	border-color: #abe876;
+    color: #1632cc;
+}
+bc{
+	font-family: "Arial";
+	font-size: 90%;
+	font-weight: bold;
+    color: #990000;
+	background-color: #fcf8c7;
+}
+ks{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #0000CD	;
+	font-size: 90%;
+}
+kc{
+	font-family: "Arial";
+	font-weight: bold;
+    color: #008000	;
+	font-size: 90%;
+}
+pre{
+	font-family: "Consolas";
+	font-size: 85%;
+	background-color: #f5f5f5;
+	border: 1.5px solid silver;
+	padding: 5px;
+}
+m{
+	font-family: "Helvetica";
+	line-height: 100%;
+ 	font-size: 75%;
+}
+div.body{
+	 
+    font-size: 18px;
+}
+k{
+    color: #990000;
+	font-weight: bold;
+	font-size: 90%;
+}
+h1 {
+    font-size: 150%;
+    background-color: #b2c0ff;
+	padding: 10px;
+}
+
+h2 {
+    background-color: #9ed8ff;
+    font-size: 130%;
+}
+
+h3 {
+	background-color: #e6ccff;
+    font-size: 100%;
+}
+h4 {
+    background-color: #ccffcc;
+    font-size: 100%;
+	width: 95%;
+	border-radius: 5px;
+	padding: 2px;
+}
+h5 {
+    background-color: #d5ffb0;
+    font-size: 100%;
+
+}
+div.req{
+	background-color: #d9ffb3;
+    font-size: 18px;
+	width: 700px;
+    border: 3px solid green;
+    padding: 15px;
+    margin: 10px;
+}
+div.remark{
+	background-color: #E3F2FD;
+    border: 1.5px solid #d5f2ed;
+    padding: 15px;
+    margin: 10px;
+	border-radius: 25px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+ol, ul, li {
+  margin: 0;
+  margin-left: 10px;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+img {
+	border: 1.5px solid #d5f2ed
+
+}
+
+a, a:visited, a:active, a:link, a:hover {
+    text-decoration: underline;
+    color: #545454;
+    background-color: transparent;
+}
+
+div.wrapdesc{
+	width: 90%;
+	margin: auto;
+}
+
+div.imagedesc{
+	width: 85%;
+	margin: auto;
+}
+</style>
+    
+<head>
+    <meta charset="utf-8"/>
+<title>robotCleaner</title></head>
+    
+<body>
+<div id="top">
+<h1>LABORATORIO DI INGEGNERIA DEI SISTEMI SOFTWARE <font size="5"></font> </h1>
+</div>  
+
+<div class="body"> 
+<h2>Introduction</h2>
+ 
+ 
+<h2>Requirements</h2>
+
+ 
+<div class="remark">
+    Muovere il VirtualRobot in modo da coprire tutta la superficie di una stanza vuota.
+</div>
+</div>
+<h2>Requirement analysis</h2>
+<div class="remark">
+    L'interazione con il committente ha chiarito il significato dei seguenti termini:
+    <br> <br>
+    <ul>
+        <li>
+            <ks>VirtualRobot</ks>: un dispositivo capace di muoversi ricevendo comandi via rete, 
+            secondo quanto riportato in <a href="./resource/VirtualRobot2021.html">VirtualRobot2021</a>. 
+        </li>
+        <li>
+            <ks>Stanza vuota</ks>: una stanza convenzionale, delimitata da quattro pareti solide, e priva
+            al suo interno di ostacoli fisici.
+        </li>
+    </ul>
+</div>
+<h3>User Story</h3>
+Come utente, posizione il robot nella cella <ks>HOME</ks> (rivolto a sud) e attivo un sistema che invia 
+al robot (via rete wifi) comandi di movimento. Come utente non posso interrompere l'esecuzione, 
+il sistema deve terminare in modo autonomo una volta eseguito il compito. <br>
+Al termine dell'esecuzione del sistema, mi aspetto che il robot abbia effettuato un percorso simile a quello
+riportato nella figura, comprendo l'intera superficie della stanza. <br><br>
+<img style="width: 45%;" src="./img/WebGLScene.png" alt="">
+<h3>Verifica dei risultati</h3>
+<div class="remark">
+    Occorre verificare che il robot copra effettivamente tutta la superficie della stanza. <br>
+    La verifica deve essere effettuata via software senza bisogno dell'intervento di un utente umano.
+</div>
+<h2>Problem analysis</h2>
+<h3>Aspetti Rilevanti</h3>
+<ol>
+    <li>
+        Si tratta di realizzare un sistema distribuito composto da due macro componenti:
+        <br><br>
+        <ul>
+            <li>Il robot virtuale, fornito dal committente.</li>
+            <li>L'applicazione (<ks>robotCleaner</ks>) che invia comandi al robot in modo da soddisfare i 
+            requisiti.</li>
+        </ul>
+    </li>
+    <li>
+        Il robot riceve comandi via rete in due modi diversi, 
+        come descritto in <a href="./resource/VirtualRobot2021.html"><ks>VirtualRobot2021</ks></a>:
+        <br><br>
+        <ul>
+            <li>
+                Inviando messaggi alla porta 8090 con protocollo HTTP POST.
+            </li>
+            <li>
+                Inviando messaggi alla porta 8091 usando una WebSocket
+            </li>
+        </ul>
+    </li>
+</ol>
+<h3>Abstraction Gap</h3>
+<div class="remark">
+    Esistono numerose librerie in molti linguaggi di programmazione che permettono l'invio di
+    comandi tramite HTTP POST o tramite WebSocket, non si individua quindi, alcun <ks>abstraction-gap</ks> 
+    significativo sul piano operativo.
+    <br> <br>
+    Tuttavia esiste un abstraction-gap sul piano concettuale: vi sono due possibili tecnologie per
+    comunicare con il robot e ciascuna richiede opportuni supporti. Concettualmente 
+    si tratta di impostare uno schema di interazione <ks>request-response</ks>, nel caso di interazione tramite
+    HTTP POST, oppure <ks>dispatch</ks> nel caso di WebSocket.
+</div>
+
+<h3>Problematiche Individuate</h3>
+<ol>
+    <li>
+        Il sistema software dovrebbe essere il più possibile indipendente dal protocollo di comunicazione
+        usato per interagire con il WEnv. Il progettista potrebbe utilizzare il pattern <ks>Factory</ks> per rendere il livello applicativo 
+        il più possibile invariante rispetto al protocollo di comunicazione, il quale potrebbe essere selezionato
+        in fase di configurazione del sistema. 
+        <div class="remark">
+            Il sistema software, <ks>"robotCleaner"</ks>, deve essere progettato in modo da operare ad un livello
+            di astrazione superiore rispetto alla tecnologie utilizzate per la comunicazione. 
+        </div>
+    </li>
+    <br>
+    <li>
+        Il problema consiste nel definire un controllore capace di realizzare una strategia di 
+        comando sistematica, il robot non deve muoversi nella stanza in maniera casuale ma dovrebbe 
+        seguire una precisa strategia di movimento.
+        <div class="remark">
+            La strategia di movimento deve permettere il soddisfacimento dei requisiti e la verifica del 
+            lavoro tramite software.
+        </div> 
+    </li>
+    <br>
+    <li>
+        La necessità di definire un TestPlan automatizzabile implica che l'applicazione debba essere 
+        in qualche modo "osservabile", ovvero bisogna rendere gli effetti verificabili da parte di una macchina.
+        <br>
+        Un possibile modo di procedere è quello di inferire conoscenza dai comandi inviati e dalle 
+        risposte ricevute dal WEnv, rappresentando in modo esplicito tale conoscenza.
+        <br>
+        <div class="remark">
+            Si ha quindi la necessità di creare un sorta di <ks>mappa</ks> capace di fornire un modello delle 
+            azioni del robot sul quale un programma di testing possa effettuare le verifiche.
+        </div>
+    </li>
+</ol>
+
+<h3>Strategie di movimento</h3>
+Sono possibili diverse strategie di movimento che permettono il soddisfacimento dei risultati e la verifica
+della correttezza via software. <br> <br>
+<img src="./img/journey.png" alt="" width="31%" height="35%">
+<img src="./img/journey2.png" alt="" width="30%" height="35%">
+<img src="./img/journey3.png" alt="" width="30%" height="35%">
+
+<h4>Movimento a spirale </h4>
+Nel caso della figura a sinistra, il robot segue i bordi della stanza, 
+riducendo via via il lati della stanza di <ks>DR</ks> (dimensione robot). In questo modo il robot lavora 
+seguendo un moviemnto a spirale, in una 'stanza virtuale' di lati <ks>DWallDown - N*DR</ks> e
+<ks>DWallLeft - N*DR</ks>, con N=1,2,..,M.
+<br> <br>
+<i>Completamento del lavoro</i>: Quando la 'stanza virtuale' perde tutte le dimensioni il robot avrà 
+completato il lavoro.
+<br>
+<i>Verifica dei risultati</i>: Bisogna tenere traccia, in una mappa, delle posizioni coperte dal robot.
+
+<h4>Movimento a colonne</h4>
+Nel caso della figura centrale, il robot lavora 'per colonne'.
+In particolare, procede lungo il muro <ks>wallLeft</ks> fino a incontrare <ks>wallDown</ks>.
+Qui gira a sinistra, fa un passo laterale di lunghezza adeguaata, poi gira di nuovo a sinistra e procede
+diritto verso il muro <ks>wallUp</ks>; quando lo incontra gira a destra fa un passo laterale, 
+rigira verso destra e di nuovo procede verso <ks>wallDown</ks>.
+<br> <br>
+
+<i>Completamento del lavoro</i>: durante un passo laterale, il robot incontrerà di sicuro <ks>wallRight</ks>: 
+come ultima mossa procede lungo tale muro fino a che non incontra di nuovo un muro (wallUp o wallDown) 
+e qui si ferma, considerando terminato il lavoro.
+<br>
+<i>Verifica dei risultati</i>:  consiste nel tenere traccia del numero di passi laterali compiuti lungo 
+il muro <ks>wallDown</ks>. Se ogni passo copre una distanza DR pari alla lunghezza del robot, 
+il numero totale dei passi da compiere è <ks>DWallDown/DR + 1</ks>.
+
+<h4>Moviemento a quadrati incrementali</h4>
+Nel caso della figura di destra, il robot procede coprendo aree quadrate di lato <ks>DR*N</ks>,
+con N=1,2,..,M. Questa strategia risulta facile da realizzare per stanza quadrate o quasi, ma è
+più complicata per stanza rettangolari con lati di lunghezza diversa tra loro.
+
+<div class="remark">
+    Come analista, consiglio di seguire la strategia di <ks>movimento a spirale</ks>, sebbene questa strategia
+    possa essere leggermente più complicata rispetto alla strategia di <ks>movimento a colonne</ks>.  <br>
+    Con la strategia di <ks>movimento a spirale</ks> il robot effettua, per tutto il tragitto, solo
+    le due mosse <ks>turnLeft</ks> e <ks>moveForward</ks>, mentre nel caso del <ks>movimento a colonne</ks>
+    le mosse da eseguire sono tre <ks>turnRight</ks>, <ks>turnLeft</ks> e <ks>moveForward</ks>, introducendo 
+    la necessità di discriminare tra collisioni con il <ks>wallDown</ks> e collisioni con il <ks>wallUp</ks>.
+</div>
+
+
+<h3>Architettura Logica</h3>
+Il sistema che bisogna realizzare può essere rappresentato dalla seguente architettura logica: <br> <br>
+<img style="width: 45%;" src="./img/ArcLogic.png" alt="">
+<br>
+<div class="remark">
+    Sebbene l'utilizzo del protocollo HTTP POST potrebbe essere adeguato, come analista, ritengo che 
+    l'uso di una <ks>WebSocket</ks> potrebbe rivelarsi più flessibile, in quanto permette di ricevere
+    informazioni emesse dal <ks>WEnv</ks> in maniera spontanea e di implementare una comunicazione 
+    <ks>asincrona</ks>.
+</div>
+
+<h2>Test plans</h2> 
+Al fine di verificare che l'applicazione sviluppata soddisfi i requisiti, dovremmo tenere traccia delle mosse
+effettuate dal robot, più precisamente bisogna tenere traccia delle posizioni, all'interno della stanza, coperte dal robot.
+Per fare ciò supponiamo di suddividere la stanza in un reticolo in cui ogni cella ha la dimensione del robot,
+e impostiamo il tempo delle mosse <ks>"moveForward"</ks> e <ks>"moveBackward"</ks> in modo da ottenere 
+spostamenti di unità-robot, come mostrato in figura: <br> <br>
+<img style="width: 30%;" src="./img/Griglia.png" alt="">
+<br><br>
+Partendo dalla cella HOME ([0,0]) il robot si muove a spirale, come mostrato in figura, per coprire 
+l'intera superficie della stanza. <br> <br>
+<img style="width: 30%;" src="./img/journey.png" alt="">
+<br><br>
+<div class="remark">
+    Per fare ciò le uniche mosse eseguite dal robot sono la <ks>"moveForward"</ks> e la <ks>"turnLeft"</ks>, poichè
+    la <ks>turnLeft</ks> ruota il robot di novanta gradi sulla stessa cella l'unica mossa di interesse, ai fini del Test 
+    è la <ks>moveForward</ks>. <br>
+    Per ogni <ks>moveForward</ks> eseguita con successo aggiungiamo una <kc>"x"</kc> in una matrice,
+    inizialmente vuota, nella posizione corrispondente alla cella esplorata.
+    Per ogni <ks>moveForward</ks> fallita a causa di una collisione aggiungiamo una <kc>"o"</kc> alla matrice.
+    In questo modo al termine dell'applicazione la matrice avrà una forma simile alla seguente, essendo questa
+    la forma di una <ks>regular expression</ks> è facilmente testabile via software.
+</div>
+<pre>
+    |o, x, x, x, o,
+    |x, x, x, x, x,
+    |x, x, x, x, x,
+    |x, x, x, x, x,
+    |o, x, x, x, o,
+</pre> 
+
+<h2>Project</h2> 
+
+
+<h2>Testing</h2> 
+ 
+
+<h2>Deployment</h2> 
+
+ 
+<h2>Maintenance</h2> 
+
+<h2>Autovalutazione</h2>
+
+<div class="remark">
+    Sulla base del lavoro da me svolto e delle considerazioni da lei fatte a lezione, do al mio elaborato il seguente voto: <b>B</b>
+</div>
+ 
+<!-- USEFUL
+<table style="width:100%" border="1">
+<tr>
+<td style="width:50%">
+</td>
+<td></td>
+</tr>
+</table>
+-->
+	      	
+<br/><br/> 	
+</div>  
+
+<div style="background-color:rgba(86, 56, 253, 0.9); width:60%;text-align:left;color:white">
+By Enrico Valastro email: enrico.valastro@studio.unibo.it  
+<img src="./img/foto.jpeg" alt="mbot" width="15%" height="15%">
+</div> 
+</body>
+</html>
