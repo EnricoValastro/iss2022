@@ -56,7 +56,7 @@ public class ProxyAsClient {
     }
 
     public void sendCommandOnConnection( String cmd )  {
-        System.out.println( name+"   |   sendCommandOnConnection " + cmd + " conn=" + conn);
+        System.out.println( name+"   |   sendCommandOnConnection " + cmd);
         try {
             conn.forward(cmd);
         } catch (Exception e) {
@@ -65,7 +65,7 @@ public class ProxyAsClient {
     }
 
     public String sendRequestOnConnection( String request )  {
-        System.out.println(name+"   |   sendRequestOnConnection request=" + request + " conn=" + conn);
+        System.out.println(name+"   |   sendRequestOnConnection request=" + request);
         try {
             String answer = conn.request(request);
             return  answer  ;
